@@ -4,7 +4,9 @@ import { StyleSheet, View, Alert } from 'react-native';
 import Constants from 'expo-constants';
 import TopBar from './components/TopBar';
 import axios from 'axios';
-import Swipes from './components/SwipeImage';
+// import Swipes from './components/SwipeImage';
+import BottomBar from './components/BottomBar';
+import Swipes from './components/Swipes';
 
 export default function App() {
   const [users, setUsers] = useState([])
@@ -24,14 +26,26 @@ export default function App() {
   useEffect(() => {
     fetchUser()
   },[])
+
+  function handleLike() {
+    console.log('like')
+    nextUser();
+  }
+
+function nextUser() {
+  const nextIndex = users.length - 2 == currentIndex ? 0 : currentIndex + 1;
+  setCurrentIndex(nextIndex);
+}
+
   return (
     <View style={styles.container}>
       <TopBar/>
      <View style={styles.swipes}>
-       {users.length > 1 && (
-         <Swipes user={users[currentIndex]}/>
+       {users.length > 1 && users.map((u, i) => currentIndex == i && 
+         <Swipes key={i} currentIndex={currentIndex} users={users} handleLike={handleLike}/>
        )}
      </View>
+     <BottomBar/>
     </View>
   );
 }

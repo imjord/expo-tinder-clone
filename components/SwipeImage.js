@@ -1,8 +1,8 @@
 import React from "react";
 import {View, Text, Image, StyleSheet} from 'react-native';
+import {FontAwesome} from '@expo/vector-icons';
 
-
-export default function Swipes({ user }){
+export default function SwipeableImage({ user }){
     return (
         <View>
             <Image source={{ uri: user.picture.large }} style={styles.photo}/>
@@ -12,6 +12,7 @@ export default function Swipes({ user }){
                     <Text style={[styles.textSeconday, styles.textShadow]}>{user.dob.age}</Text>
                 </View>
                 <View style={styles.textRow}>
+                    <FontAwesome name="map-marker" size={20} color="white"></FontAwesome>
                     <Text style={[styles.textSeconday, styles.textShadow]}>{user.location.city}</Text>
                 </View>
             </View>
