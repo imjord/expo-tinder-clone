@@ -37,12 +37,17 @@ function nextUser() {
   setCurrentIndex(nextIndex);
 }
 
+function handlePass(){
+  console.log('pass')
+  nextUser();
+}
+
   return (
     <View style={styles.container}>
       <TopBar/>
      <View style={styles.swipes}>
        {users.length > 1 && users.map((u, i) => currentIndex == i && 
-         <Swipes key={i} currentIndex={currentIndex} users={users} handleLike={handleLike}/>
+         <Swipes key={i} currentIndex={currentIndex} users={users} handleLike={handleLike} handlePass={handlePass}/>
        )}
      </View>
      <BottomBar/>
