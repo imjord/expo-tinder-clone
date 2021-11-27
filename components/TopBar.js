@@ -1,17 +1,18 @@
 import React from "react";
-import {View, Text,StyleSheet } from 'react-native';
+import {View,StyleSheet } from 'react-native';
 import {FontAwesome5, FontAwesome} from '@expo/vector-icons';
 
 
 export default function TopBar() {
 
     return(
-        <View styles={styles.container}>
-           <FontAwesome5 name="fire" size={27} color="#F06795"></FontAwesome5>
-           <FontAwesome name="comments" size={27} color="#F06795"></FontAwesome>
-           <FontAwesome name="user" size={27} color="#F06795"></FontAwesome>
+        <View style={styles.container}>
+           <FontAwesome5 name="fire" size={27} color="#F06795" />
+           <FontAwesome name="comments" size={27} color="#F06795" />
+           <FontAwesome name="user" size={27} color="#F06795" />
         </View>
     )
+
 
 }
 
@@ -23,14 +24,12 @@ const styles = StyleSheet.create({
         padding: 15,
         backgroundColor: 'white',
         shadowColor: '#000',
-
         shadowOffset: {
-            width: 0,
-            height: 10,
+          width: 0,
+          height: 10,
         },
         shadowOpacity: 0.12,
-            shadowRadius: 5.46,
-            elevation: 9,
-        
-    }
+        shadowRadius: 5.46,
+        elevation: 9,
+      },
 })
